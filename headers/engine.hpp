@@ -1,13 +1,14 @@
-//
-// Created by Domakingo on 14/07/2024.
-//
-
 #ifndef ENGINE_HPP
 #define ENGINE_HPP
 
 #include <citro2d.h>
 #include "player.hpp"
 #include "ball.hpp"
+
+struct Wall {
+    float x, y, width, height;
+    u32 color;
+};
 
 class Engine {
 private:
@@ -24,8 +25,8 @@ public:
     void input();
 
     Player player;
-	Ball ball;
+    Ball ball;
+    Wall walls[3];
 };
 
-#endif //ENGINE_HPP
-
+#endif // ENGINE_HPP

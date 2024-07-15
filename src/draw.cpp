@@ -8,6 +8,13 @@ void Engine::draw() {
         C2D_TargetClear(top, clrClear);
         C2D_SceneBegin(top);
 
+		/*
+        // Walls
+        for (int i = 0; i < 3; i++) {
+            C2D_DrawRectSolid(walls[i].x, walls[i].y, 0.0f, walls[i].width, walls[i].height, walls[i].color);
+        }
+		*/
+
         // Ball
         C2D_DrawCircleSolid(ball.getX(), ball.getY(), 0.5f, ball.getRadius(), ball.getColor());
 

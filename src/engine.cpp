@@ -1,11 +1,7 @@
-//
-// Created by Domakingo on 14/07/2024.
-//
-
 #include <citro2d.h>
 #include "engine.hpp"
 
-Engine::Engine() : running(true){
+Engine::Engine() : running(true) {
     // Initialize graphics services
     romfsInit();
     gfxInitDefault();
@@ -23,6 +19,21 @@ Engine::Engine() : running(true){
     // Initialize Player
     player = Player();
     ball = Ball();
+
+    // Initialize walls
+    float verticalWallWidth = 10.0f;
+    float verticalWallHeight = 240.0f; // Altezza dello schermo inferiore
+    float horizontalWallWidth = 400.0f; // Larghezza dello schermo superiore
+    float horizontalWallHeight = 10.0f;
+
+    // Parete verticale sinistra
+    walls[0] = {0.0f, 0.0f, verticalWallWidth, verticalWallHeight, C2D_Color32(255, 0, 0, 0)};
+
+    // Parete verticale destra
+    walls[1] = {400.0f - verticalWallWidth, 0.0f, verticalWallWidth, verticalWallHeight, C2D_Color32(255, 0, 0, 0)};
+
+    // Parete orizzontale in alto
+    walls[2] = {0.0f, 0.0f, horizontalWallWidth, horizontalWallHeight, C2D_Color32(255, 0, 0, 0)};
 }
 
 void Engine::run() {
@@ -38,4 +49,3 @@ void Engine::run() {
     C3D_Fini();
     gfxExit();
 }
-

@@ -30,7 +30,21 @@ void Ball::checkCollision(const Player& player) {
         // Sposta la palla sopra il player per evitare collisioni multiple
         y = playerY - radius;
     }
+
+    // Controlla se la palla colpisce il muro sinistro o destro
+    if (x - radius < 0) {
+        // La palla ha colpito il muro sinistro, inverti la velocità orizzontale
+        vx = -vx;
+        // Sposta la palla all'interno del campo di gioco
+        x = radius;
+    } else if (x + radius > 400) {
+        // La palla ha colpito il muro destro, inverti la velocità orizzontale
+        vx = -vx;
+        // Sposta la palla all'interno del campo di gioco
+        x = 400 - radius;
+    }
 }
+
 
 
 void Ball::setX(float n) {
