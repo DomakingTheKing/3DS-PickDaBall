@@ -7,6 +7,11 @@ void Engine::draw() {
         // Disegna sullo schermo superiore
         C2D_TargetClear(top, clrClear);
         C2D_SceneBegin(top);
+
+        // Ball
+        C2D_DrawCircleSolid(ball.getX(), ball.getY(), 0.5f, ball.getRadius(), ball.getColor());
+
+        // Player bar
         C2D_DrawRectSolid(player.getX(), 230.0f, 0.5f, 50.0f, 5.0f, player.getColor());
 
         // Disegna sullo schermo inferiore

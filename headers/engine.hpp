@@ -7,6 +7,7 @@
 
 #include <citro2d.h>
 #include "player.hpp"
+#include "ball.hpp"
 
 class Engine {
 private:
@@ -23,6 +24,7 @@ public:
     void input();
 
     Player player;
+	Ball ball;
 };
 
 #endif //ENGINE_HPP

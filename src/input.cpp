@@ -13,7 +13,21 @@ void Engine::input() {
 
     if (kDown & KEY_START) running = false; // Exit the loop if START is pressed
 
-    if ((kHeld & KEY_LEFT) && (player.getX() > 25)) player.setX(-(player.getSpeed()));
-    if ((kHeld & KEY_RIGHT) && (player.getX() < 325)) player.setX(player.getSpeed());
+    if ((kHeld & KEY_LEFT) && (player.getX() > 25)){
+		if (kHeld & KEY_B){
+			player.setX(-(player.getSpeed()*2));
+		} else {
+			player.setX(-(player.getSpeed()));
+		}
+	}
+
+    if ((kHeld & KEY_RIGHT) && (player.getX() < 325)){
+		if (kHeld & KEY_B){
+			player.setX(player.getSpeed()*2);
+		} else {
+			player.setX(player.getSpeed());
+		}
+	}
+
 }
 

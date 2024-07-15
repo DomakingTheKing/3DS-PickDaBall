@@ -22,6 +22,7 @@ Engine::Engine() : running(true){
 
     // Initialize Player
     player = Player();
+    ball = Ball();
 }
 
 void Engine::run() {
