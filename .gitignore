@@ -1,0 +1,12 @@
+# Ignora tutte le cartelle di CLion
+.idea/
+cmake-build-debug/
+cmake-build-release/
+
+# Ignora la cartella build
+build/
+
+# Ignora i file con estensioni specifiche
+*.3dsx
+*.elf
+*.smdh
